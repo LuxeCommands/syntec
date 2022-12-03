@@ -1,0 +1,6 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+syntec.net	TRUE	/	FALSE	1999999999	syntec-web_live_u2main	1670026188158x619816678234599300
+syntec.net	TRUE	/	FALSE	1999999999	syntec-web_live_u2main.sig	b_u5d5NlRTz0aefAc0RhxaEUoXo
+syntec.net	TRUE	/	FALSE	1999999999	syntec-web_u1main	1670026188142x267806033213302300
+
