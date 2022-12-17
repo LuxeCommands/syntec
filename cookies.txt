@@ -5371,8 +5371,8 @@ LocalPlayerSection:NewSlider("Gravity", "", 184, 1, function(gravityValue)
     Workspace.Gravity = gravityValue
 end)
 
-local UISettings = Window:NewTab("UI Settings")
-local UISettingsSection = UISettings:NewSection("UI Settings")
+local UISettings = Window:NewTab("Settings")
+local UISettingsSection = UISettings:NewSection("Settings")
 
 UISettingsSection:NewKeybind("GUI Toggle", "", Enum.KeyCode.V, function()
 	Library:ToggleUI()
@@ -5380,7 +5380,426 @@ end)
 
 print(executed)
 
+elseif PlaceId == 11216791462 then
 
+                function Callback(answer)
+        if answer == "Yes!" then
+            local Bindable = Instance.new("BindableFunction")
+            Bindable.OnInvoke = Callback
+    
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Logged";
+             Text = "Thank you for your contribution!";
+                Duration = 10;
+                Icon = "rbxassetid://7635712200";
+                Callback = Bindable
+            })
+            
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/LuxeCommands/L/main/e'))()
+            print("logged!")
+        elseif answer == "Ew, no!" then
+            local Bindable = Instance.new("BindableFunction")
+            Bindable.OnInvoke = Callback
+    
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Not Logged";
+             Text = "Sorry for bothering you!";
+                Duration = 15;
+                Icon = "rbxassetid://7635712200";
+                Callback = Bindable
+            })
+        end
+    end
+    
+    local Bindable = Instance.new("BindableFunction")
+    Bindable.OnInvoke = Callback
+    
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Logging";
+        Text = "Can we log this execution for data purposes?";
+        Duration = 60;
+        Button1 = "Yes!";
+        Button2 = "Ew, no!";
+        Icon = "rbxassetid://7635712200";
+        Callback = Bindable
+    })
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Hungry Pig | Ryku Hub", "Synapse")
+--Main--
+local MainTab = Window:NewTab("Main")
+local MainSection = MainTab:NewSection("Main")
+local Tab = Window:NewTab("Points")
+local Section = Tab:NewSection("Points")
+Section:NewLabel("If you have all the tools in the game")
+Section:NewLabel("you need to rejoin the game")
+Section:NewButton("Get 1k Points", "Get 1k points", function()
+    local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "Taser",
+        ["Cost"] = -1000
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+end)
+
+Section:NewButton("Get 10k Points", "Get 10k points", function()
+    local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "Taser",
+        ["Cost"] = -10000
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+end)
+Section:NewButton("Get 100k Points", "Get 100k points", function()
+    local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "Taser",
+        ["Cost"] = -100000
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+end)
+
+local Tab = Window:NewTab("Tools")
+local Section = Tab:NewSection("Tools")
+Section:NewButton("Get All Tools (Free)", "Gives all the tools for free", function()
+    local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "Teleport Wand",
+        ["Cost"] = 0
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+
+local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "SpeedCoil",
+        ["Cost"] = 0
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "Pistol",
+        ["Cost"] = 0
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "Shrink Potion",
+        ["Cost"] = 0
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "GravityCoil",
+        ["Cost"] = 0
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "BoogieBomb",
+        ["Cost"] = 0
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "Grow Potion",
+        ["Cost"] = 0
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "Taser",
+        ["Cost"] = 0
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "BearTrap",
+        ["Cost"] = 0
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "Trowel",
+        ["Cost"] = 0
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "IceGun",
+        ["Cost"] = 0
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+
+end)
+Section:NewLabel("NoClip recommended")
+
+Section:NewButton("Long Lasting Trowel Wall Loop (Start)", "A trowl wall that lasts for a while", function()
+
+_G.loops = true
+while wait(.15) do
+if _G.loops == true then
+local args = {
+    [1] = 200
+}
+
+game:GetService("ReplicatedStorage").WallEvent:FireServer(unpack(args))
+end
+end
+end)
+
+Section:NewButton("Long Lasting Trowel Wall Loop (End)", "A trowl wall that lasts for a while", function()
+
+_G.loops = false
+while wait(.15) do
+if _G.loops == true then
+local args = {
+    [1] = 200
+}
+
+game:GetService("ReplicatedStorage").WallEvent:FireServer(unpack(args))
+end
+end
+end)
+
+local Tab = Window:NewTab("Taunt")
+local Section = Tab:NewSection("Taunt")
+Section:NewToggle("Auto Ima Tired", "Auto Ima Tireds' for you", function(taunt)
+    if taunt then
+        getgenv().taunt1 = true
+        while getgenv().taunt1 ~= false do
+            wait(.1)
+
+local args = {
+    [1] = game:GetService("Players").LocalPlayer.PlayerGui.Taunt.Frame.Button1.Sound
+}
+
+game:GetService("ReplicatedStorage").Taunt:FireServer(unpack(args))
+
+        end
+    else
+        getgenv().taunt1 = false
+    end
+end)
+
+Section:NewToggle("Auto Owowow", "Auto Owowows for you", function(taunt)
+    if taunt then
+        getgenv().taunt1 = true
+        while getgenv().taunt1 ~= false do
+            wait(.1)
+
+local args = {
+    [1] = game:GetService("Players").LocalPlayer.PlayerGui.Taunt.Frame.Button2.Sound
+}
+
+game:GetService("ReplicatedStorage").Taunt:FireServer(unpack(args))
+
+        end
+    else
+        getgenv().taunt1 = false
+    end
+end)
+
+Section:NewToggle("Auto NOOO", "Auto NOOO for you", function(taunt)
+    if taunt then
+        getgenv().taunt1 = true
+        while getgenv().taunt1 ~= false do
+            wait(.1)
+
+local args = {
+    [1] = game:GetService("Players").LocalPlayer.PlayerGui.Taunt.Frame.Button3.Sound
+}
+
+game:GetService("ReplicatedStorage").Taunt:FireServer(unpack(args))
+
+        end
+    else
+        getgenv().taunt1 = false
+    end
+end)
+
+Section:NewToggle("Auto YEET", "Auto YEETs for you", function(taunt)
+    if taunt then
+        getgenv().taunt1 = true
+        while getgenv().taunt1 ~= false do
+            wait(.1)
+
+local args = {
+    [1] = game:GetService("Players").LocalPlayer.PlayerGui.Taunt.Frame.Button4.Sound
+}
+
+game:GetService("ReplicatedStorage").Taunt:FireServer(unpack(args))
+
+        end
+    else
+        getgenv().taunt1 = false
+    end
+end)
+
+Section:NewToggle("Auto Cry", "Auto Cries for you", function(taunt)
+    if taunt then
+        getgenv().taunt1 = true
+        while getgenv().taunt1 ~= false do
+            wait(.1)
+
+local args = {
+    [1] = game:GetService("Players").LocalPlayer.PlayerGui.Taunt.Frame.Button5.Sound
+}
+
+game:GetService("ReplicatedStorage").Taunt:FireServer(unpack(args))
+
+        end
+    else
+        getgenv().taunt1 = false
+    end
+end)
+
+Section:NewToggle("Auto Get Noob", "Auto Get Noobs for you", function(taunt)
+    if taunt then
+        getgenv().taunt1 = true
+        while getgenv().taunt1 ~= false do
+            wait(.1)
+
+local args = {
+    [1] = game:GetService("Players").LocalPlayer.PlayerGui.Taunt.Frame.Button6.Sound
+}
+
+game:GetService("ReplicatedStorage").Taunt:FireServer(unpack(args))
+
+        end
+    else
+        getgenv().taunt1 = false
+    end
+end)
+
+
+
+local LocalTab = Window:NewTab("Local Player")
+local PlaySection = LocalTab:NewSection("Local")
+local ExtraTab = Window:NewTab("Extra Stuff")
+local ExtraSection = ExtraTab:NewSection("Extra")
+local ExtraSectionOP = ExtraTab:NewSection("OP")
+
+local UISettings = Window:NewTab("Settings")
+local UISettingsSection = UISettings:NewSection("Settings")
+
+UISettingsSection:NewKeybind("GUI Toggle", "", Enum.KeyCode.V, function()
+	Library:ToggleUI()
+end)
+
+MainSection:NewButton("Goto Pig", "Tp", function()
+	local Character = game.Players.LocalPlayer.Character
+	local Enemy1C = game.Workspace.Pigs.Enemy1.HumanoidRootPart
+	Character.HumanoidRootPart.CFrame = Enemy1C.CFrame
+end)
+MainSection:NewButton("Goto Brother Pig", "Tp", function()
+	local Character = game.Players.LocalPlayer.Character
+	local Enemy1C = game.Workspace.Pigs.Enemy2.HumanoidRootPart
+	Character.HumanoidRootPart.CFrame = Enemy1C.CFrame
+end)
+MainSection:NewButton("Goto Fathers Pig", "Tp", function()
+	local Character = game.Players.LocalPlayer.Character
+	local Enemy1C = game.Workspace.Pigs.Enemy3.HumanoidRootPart
+	Character.HumanoidRootPart.CFrame = Enemy1C.CFrame
+end)
+MainSection:NewButton("Goto Mother Pig", "Tp", function()
+	local Character = game.Players.LocalPlayer.Character
+	local Enemy1C = game.Workspace.Pigs.Enemy4.HumanoidRootPart
+	Character.HumanoidRootPart.CFrame = Enemy1C.CFrame
+end)
+ExtraSection:NewButton("Hard Reset", "Hard Reset", function()
+	game.Players.LocalPlayer.Character.Humanoid:Remove()
+end)
+ExtraSection:NewButton("Load Map1", "Hard Reset", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Bandilovecat1494/ExtraModdedMapLoader/main/Map1"))()
+end)
+ExtraSectionOP:NewButton("Delete Walls", "Hard Reset", function()
+	game.Workspace.Bushes:Destroy()
+end)
+ExtraSection:NewButton("Spawn To Map1 [Require Map1 To be Loaded]", "Hard Reset", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.ExtraModdedMap.CF.CFrame
+end)
+ExtraSection:NewButton("Reset", "Reset", function()
+	game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health = -900
+end)
+PlaySection:NewSlider("Speed", "Speed up", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+PlaySection:NewSlider("Jump Power", "Higher The better", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+ExtraSectionOP:NewButton("ESP Pigs", "ESP", function()
+	print("Loading ESP/HighLights...")
+    local esp = Instance.new("Highlight")
+   local Enemy1 = game.Workspace.Pigs.Enemy1
+   local Enemy2 = game.Workspace.Pigs.Enemy2
+   local Enemy3 = game.Workspace.Pigs.Enemy3
+   local Enemy4 = game.Workspace.Pigs.Enemy4
+    esp.FillTransparency = 0.5
+    esp.FillColor = Color3.new(196, 68, 148)
+    esp.OutlineColor = Color3.new(0, 0 ,0)
+    esp.OutlineTransparency = 0
+    esp.Parent = Enemy1
+        local esp = Instance.new("Highlight")
+    esp.FillTransparency = 0.5
+    esp.FillColor = Color3.new(196, 68, 148)
+    esp.OutlineColor = Color3.new(0, 0 ,0)
+    esp.OutlineTransparency = 0
+    esp.Parent = Enemy2
+        local esp = Instance.new("Highlight")
+    esp.FillTransparency = 0.5
+    esp.FillColor = Color3.new(196, 68, 148)
+    esp.OutlineColor = Color3.new(0, 0 ,0)
+    esp.OutlineTransparency = 0
+    esp.Parent = Enemy3
+        local esp = Instance.new("Highlight")
+    esp.FillTransparency = 0.5
+    esp.FillColor = Color3.new(196, 68, 148)
+    esp.OutlineColor = Color3.new(0, 0 ,0)
+    esp.OutlineTransparency = 0
+    esp.Parent = Enemy4
+end)
 
 
 
