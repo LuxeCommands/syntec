@@ -5468,6 +5468,18 @@ Section:NewButton("Get 100k Points", "Get 100k points", function()
 game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
 end)
 
+Section:NewTextBox("Give Custom Amount", "Gives Custom Amount", function(txt)
+	    local args = {
+    [1] = {
+        ["ImageID"] = "rbxassetid://11730056670",
+        ["Name"] = "Taser",
+        ["Cost"] = -txt
+    }
+}
+
+game:GetService("ReplicatedStorage").PurchasePet:FireServer(unpack(args))
+end)
+
 local Tab = Window:NewTab("Tools")
 local Section = Tab:NewSection("Tools")
 Section:NewButton("Get All Tools (Free)", "Gives all the tools for free", function()
