@@ -10,18 +10,6 @@ if oldreq then
     return
 end
 
-if www.JobId then
-	return
-end
-
-if DeleteWebhook then
-return
-end
-
-if filename == string.format('log %s %s', localPlayer.UserId, tick()..'.txt') then
-    return
-end
-
 			local CoreGui = game:GetService("StarterGui")
 
 			CoreGui:SetCore("SendNotification", {
