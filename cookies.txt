@@ -6070,6 +6070,8 @@ end)
     Section:NewKeybind("Open/Close GUI", "To Open And Close Gui, Duh", Enum.KeyCode.V, function()
         Library:ToggleUI()
     end)
+    
+    elseif PlaceId == 2788229376 then
 
 function Callback(answer)
     if answer == "Yes!" then
@@ -6171,6 +6173,21 @@ end)
 Section:NewButton("Gun Godmode (Lose Guns)", "Gun Godmode", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/knnegYBS"))();
     
+end)
+
+Section:NewButton("Melee Godmode", "Melee Godmode", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zvzi/saquadogui/main/src/MeleeGodmode.lua"))();
+    
+end)
+
+Section:NewButton("Godmode", "Godmode", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zvzi/saquadogui/main/src/Godmode.lua"))();
+    
+end)
+
+Section:NewButton("Full Godmode", "Full Godmode", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zvzi/saquadogui/main/src/Fullgod"))();
+    
     end)
 
     Section:NewButton("Lockpick", "Grabs all lockpicks on ground", function()
@@ -6199,19 +6216,31 @@ Section:NewButton("Gun Godmode (Lose Guns)", "Gun Godmode", function()
             })
             pcall(function() if tostring(game.PlaceId) == "2788229376" then local corepackages = game:GetService"CorePackages" local localplayer = game:GetService"Players".LocalPlayer local run = game:GetService"RunService" run:BindToRenderStep("rrrrrrrrrrr",2000,function() pcall(function() if localplayer.Character.Humanoid.Health <= 30 then localplayer.Character.Humanoid:UnequipTools() localplayer.Character.Humanoid:Destroy() workspace.CurrentCamera.CameraSubject = localplayer.Character wait() local prt = Instance.new("Model", corepackages); Instance.new("Part", prt).Name="Torso"; Instance.new("Part", prt).Name="Head"; Instance.new("Humanoid", prt).Name="Humanoid"; localplayer.Character=prt end end) pcall(function() if localplayer.Character.Humanoid.FloorMaterial == "Plastic" then ReplicatedStorage:FireServer("Stomp") end end) end) 
                 end end);
-            end)
+        end)
+        
+        Section:NewToggle("Anti-Stomp (Untested)", "Anti-Stomp (It's untested)", function(t)
+  getgenv().AntiStomp = (t)
+  while AntiStomp == true do
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zvzi/saquadogui/main/src/AntiStomp.lua"))()
+  end
+end)
             
             Section:NewButton("No Slowdown", "No Slowdown", function()
-                loadstring(game:HttpGet("https://pastebin.com/raw/RxZnBvdk"))();
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/zvzi/saquadogui/main/src/NoSlow.lua"))();
                 
                 end)
                 Section:NewButton("No Jump Cooldown", "No Jump Cooldown", function()
-                    loadstring(game:HttpGet("https://raw.githubusercontent.com/xaxaxaxaxaxaxaxaxa/Da-Hood-Scripts/main/No-Jump-Cooldown.lua"))();
+                    loadstring(game:HttpGet("https://raw.githubusercontent.com/zvzi/saquadogui/main/src/infjump.lua"))();
                     
                     end)
 
                     Section:NewButton("Reach", "Reach", function()
                         loadstring(game:HttpGet("https://raw.githubusercontent.com/Hax0963/DaHoodReach/main/Main"))()
+                        
+                    end)
+                    
+                    Section:NewButton("Tool Reach", "Reach", function()
+                        loadstring(game:HttpGet("https://raw.githubusercontent.com/zvzi/saquadogui/main/src/MeleeReach.lua"))()
                         
                         end)
 
@@ -6221,12 +6250,222 @@ Section:NewButton("Gun Godmode (Lose Guns)", "Gun Godmode", function()
                         Section:NewButton("Dot Aimlock (Z)", "Dot Aimlock (Z)", function()
                             loadstring(game:HttpGet("https://pastebin.com/raw/iALHGfEz"))()
                             
-                            end)
+                        end)
+                        
+                        Section:NewButton("Good Dot Aimlock (H)", "Dot Aimlock", function()
+                           game.StarterGui:SetCore("SendNotification", {
+        Title = "Saquado";
+        Text = "press H on your target to lock on them. don't be too blatant lol";
+        Icon = "rbxthumb://type=Asset&id=9559521463&w=420&h=420";
+        Duration = 15;
+    })
+-- Toggle
+getgenv().Target = true
+-- Configuration
+getgenv().Key = Enum.KeyCode.H
+getgenv().Prediction = 0.12405
+getgenv().ChatMode = false
+getgenv().NotifMode = true
+    getgenv().PartMode = true
+    getgenv().AirshotFunccc = true
+    getgenv().Partz = "HumanoidRootPart"
+getgenv().AutoPrediction = false
+--
+    _G.Types = {
+        Ball = Enum.PartType.Ball,
+        Block = Enum.PartType.Block, 
+        Cylinder = Enum.PartType.Cylinder
+    }
+    
+    --variables                 
+    	local Tracer = Instance.new("Part", game.Workspace)
+    Tracer.Name = "gay"	
+    Tracer.Anchored = true		
+    Tracer.CanCollide = false
+    Tracer.Transparency = 0.8
+    Tracer.Parent = game.Workspace	
+    Tracer.Shape = _G.Types.Block
+    Tracer.Size = Vector3.new(14,14,14)
+    Tracer.Color = Color3.fromRGB(255,7,255)
+    
+    --
+    local plr = game.Players.LocalPlayer
+local mouse = plr:GetMouse()
+local Runserv = game:GetService("RunService")
+
+circle = Drawing.new("Circle")
+circle.Color = Color3.fromRGB(171,0,255)
+circle.Thickness = 0
+circle.NumSides = 732
+circle.Radius = 120
+circle.Thickness = 0
+circle.Transparency = 0.7
+circle.Visible = true
+circle.Filled = false
+
+Runserv.RenderStepped:Connect(function()
+    circle.Position = Vector2.new(mouse.X,mouse.Y+35)
+end)
+    
+    	local guimain = Instance.new("Folder", game.CoreGui)
+    	local CC = game:GetService"Workspace".CurrentCamera
+    local LocalMouse = game.Players.LocalPlayer:GetMouse()
+    	local Locking = false
+    
+    	
+    --
+    if getgenv().valiansh == true then
+                        game.StarterGui:SetCore("SendNotification", {
+                   Title = "Valiant",
+                   Text = "Already Loaded!",
+                   Duration = 5
+        
+                   })
+        return
+    end
+    
+    getgenv().valiansh = true
+    
+        local UserInputService = game:GetService("UserInputService")
+
+    UserInputService.InputBegan:Connect(function(keygo,ok)
+           if (not ok) then
+           if (keygo.KeyCode == getgenv().Key) then
+               if getgenv().Target == true then
+               Locking = not Locking
+               
+               if Locking then
+               Plr =  getClosestPlayerToCursor()
+                if getgenv().ChatMode then
+        local A_1 = "Target: "..tostring(Plr.Character.Humanoid.DisplayName) local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+        	end	
+               if getgenv().NotifMode then
+    			game.StarterGui:SetCore("SendNotification", {
+        Title = "";
+        Text = "Target: "..tostring(Plr.Character.Humanoid.DisplayName);
+    
+    })
+    end
+    elseif not Locking then
+         if getgenv().ChatMode then
+        local A_1 = "Unlocked!" local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+        	end	
+        if getgenv().NotifMode then
+                        game.StarterGui:SetCore("SendNotification", {
+                   Title = "",
+                   Text = "Unlocked",
+                   Duration = 5
+               })
+           elseif getgenv().Target == false then
+                        game.StarterGui:SetCore("SendNotification", {
+                   Title = "",
+                   Text = "Target isn't enabled",
+                   Duration = 5
+     
+                   })
+               
+               end
+                  
+ 
+ end     end   
+end
+end
+end)
+	
+	function getClosestPlayerToCursor()
+		local closestPlayer
+		local shortestDistance = circle.Radius
+
+		for i, v in pairs(game.Players:GetPlayers()) do
+			if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("LowerTorso") then
+				local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+				local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(LocalMouse.X, LocalMouse.Y)).magnitude
+				if magnitude < shortestDistance then
+					closestPlayer = v
+					shortestDistance = magnitude
+				end
+			end
+		end
+		return closestPlayer
+	end
+--
+if getgenv().PartMode then
+	game:GetService"RunService".Stepped:connect(function()
+		if Locking and Plr.Character and Plr.Character:FindFirstChild("LowerTorso") then
+			Tracer.CFrame = CFrame.new(Plr.Character.LowerTorso.Position+(Plr.Character.LowerTorso.Velocity*Prediction))
+		else
+			Tracer.CFrame = CFrame.new(0, 9999, 0)
+
+		end
+	end)
+end
+
+    
+    
+    --
+	local rawmetatable = getrawmetatable(game)
+	local old = rawmetatable.__namecall
+	setreadonly(rawmetatable, false)
+	rawmetatable.__namecall = newcclosure(function(...)
+		local args = {...}
+		if Locking and getnamecallmethod() == "FireServer" and args[2] == "UpdateMousePos" then
+			args[3] = Plr.Character[getgenv().Partz].Position+(Plr.Character[getgenv().Partz].Velocity*Prediction)
+			return old(unpack(args))
+		end
+		return old(...)
+	end)
+
+
+if getgenv().AirshotFunccc == true then
+
+            if Plr.Character.Humanoid.Jump == true and Plr.Character.Humanoid.FloorMaterial == Enum.Material.Air then
+                getgenv().Partz = "RightFoot"
+            else
+                Plr.Character:WaitForChild("Humanoid").StateChanged:Connect(function(old,new)
+                    if new == Enum.HumanoidStateType.Freefall then
+                    getgenv().Partz = "RightFoot"
+                    else
+                        getgenv().Partz = "LowerTorso"
+                    end
+                end)
+            end
+end
+---
+	while wait() do
+	if getgenv().AutoPrediction == false then 
+        local pingvalue = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
+        local split = string.split(pingvalue,'(')
+        local ping = tonumber(split[1])
+        if ping < 130 then
+            getgenv().Prediction = 0.151
+        elseif ping < 125 then
+            getgenv().Prediction = 0.149
+        elseif ping < 110 then
+            getgenv().Prediction = 0.146
+        elseif ping < 105 then
+            getgenv().Prediction = 0.138
+        elseif ping < 90 then
+            getgenv().Prediction = 0.136
+        elseif ping < 80 then
+            getgenv().Prediction = 0.134
+        elseif ping < 70 then
+            getgenv().Prediction = 0.131
+        elseif ping < 60 then
+            getgenv().Prediction = 0.160
+        elseif ping < 50 then
+            getgenv().Prediction = 0.153
+        elseif ping < 40 then
+            getgenv().Prediction = 0.15529888
+        end
+	end
+    end
+                        end)
 
                             Section:NewButton("FrostyHub AimLock (Free)", "FrostyHub AimLock (Free)", function()
                                 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hax0963/FrostyHubBeta/main/FrostyHubLock"))()
                                 
-                                end)
+                        end)
+                        
 
 Section:NewLabel("Chat")
 
@@ -6273,15 +6512,236 @@ end);
     local Tab = Window:NewTab("Fun Stuff")
 
     local Section = Tab:NewSection("Fun Stuff")
-
-    Section:NewButton("Call All", "Calls Everyone", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Knaro009/Dahood-stuffs/main/call-all.lua"))();
-        
+    
+    Section:NewButton("Bat PP", "Bat PP", function()
+                local Plr = game.Players.LocalPlayer
+local LastPos = Plr.Character.HumanoidRootPart.CFrame
+	Plr.Character.Humanoid:UnequipTools()
+	wait(0.1)
+	Plr.Character.Humanoid:EquipTool(Plr.Backpack["[Bat]"])
+	Plr.Character.HumanoidRootPart.CFrame = CFrame.new(803.5, 48, -547, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Plr.Character["[Bat]"].Handle.Orientation = Vector3.new(0, 0, 90)
+	Plr.Character["[Bat]"].Handle.Position = Vector3.new(806, 47, -547)
+	Plr.Character.HumanoidRootPart.CFrame = LastPos
+                
+                end)
+    
+        Section:NewButton("Stop Sign PP", "Stop Sign Pp", function()
+        local Plr = game.Players.LocalPlayer
+local LastPos = Plr.Character.HumanoidRootPart.CFrame
+	Plr.Character.Humanoid:UnequipTools()
+	wait(0.1)
+	Plr.Character.Humanoid:EquipTool(Plr.Backpack["[StopSign]"])
+	Plr.Character["[StopSign]"].Sign:Destroy()
+	Plr.Character.HumanoidRootPart.CFrame = CFrame.new(803.5, 48, -547, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Plr.Character["[StopSign]"].Handle.Orientation = Vector3.new(0, 180, 0)
+	wait(0.2)
+	Plr.Character["[StopSign]"].Handle.Position = Vector3.new(806.5, 47, -547)
+	Plr.Character.HumanoidRootPart.CFrame = LastPos
         end)
+        
+                Section:NewButton("Sledge PP", "Sledge PP", function()
+local Plr = game.Players.LocalPlayer
+local LastPos = Plr.Character.HumanoidRootPart.CFrame
+  Plr.Character.Humanoid:UnequipTools()
+	wait(0.1)
+	Plr.Character.Humanoid:EquipTool(Plr.Backpack["[SledgeHammer]"])
+	Plr.Character.HumanoidRootPart.CFrame = CFrame.new(803.5, 48, -547, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+	Plr.Character["[SledgeHammer]"].Part.Orientation = Vector3.new(0, 180, 0)
+	Plr.Character["[SledgeHammer]"].Part.Position = Vector3.new(804, 47, -547)
+	Plr.Character["[SledgeHammer]"].Part.Name = "BALLS"
+	wait(0.1)
+	Plr.Character["[SledgeHammer]"].Part.Orientation = Vector3.new(-90, 90, 180)
+	Plr.Character["[SledgeHammer]"].Part.Position = Vector3.new(806, 47, -547)
+	Plr.Character["[SledgeHammer]"].Part.Name = "SHAFT"
+	Plr.Character.HumanoidRootPart.CFrame = LastPos
+                end)
+                
+         Section:NewButton("Knife PP", "Knife PP", function()
+local Plr = game.Players.LocalPlayer
+local LastPos = Plr.Character.HumanoidRootPart.CFrame
+wait(0.1)
+Plr.Character.HumanoidRootPart.CFrame = CFrame.new(803.5, 48, -547, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+Plr.Character["[Knife]"].Handle.Orientation = Vector3.new(0, 180, 0)
+wait(0.2)
+Plr.Character["[Knife]"].Handle.Position = Vector3.new(804.3, 47, -547)
+Plr.Character.HumanoidRootPart.CFrame = LastPos
+                end)
+    
+            Section:NewButton("Galaxy Chicken", "Galaxy Chicken", function()
+local Plr = game.Players.LocalPlayer
+local lastPos = Plr.Character.HumanoidRootPart.CFrame
+local e = 0
+local p = 0
+local a = {}
+repeat
+    Plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Chicken] - $7"].Head.CFrame
+    wait(0.5)
+    fireclickdetector(game.Workspace.Ignored.Shop["[Chicken] - $7"].ClickDetector)
+    for i, v in pairs(Plr.Backpack:GetChildren()) do
+        if v.Name == "[Chicken]" then
+            e = 0
+            for i, v in pairs(a) do
+                e = e + 1
+            end
+            table.insert(a, v)
+            v.Parent = Plr.Character
+        end
+    end
+until e >= 100
+
+for i, v in pairs(a) do
+    local p = (i*0.01)+0.50
+    v.GripUp = Vector3.new(0, 1, 0)
+    if i <=e/2 then
+        v.GripPos = Vector3.new(((p^4)*math.cos(18.5*(math.pi*p)))*40, 0, ((p^4)*math.sin(18.5*(math.pi*p)))*40)
+    else
+        v.GripPos = Vector3.new(((p^4)*math.cos(18.5*(math.pi*p)))*40, 0, ((p^4)*math.sin(18.5*(math.pi*p)))*40)
+    end
+end
+Plr.Character.Humanoid:UnequipTools()
+wait(5)
+for _, burger in pairs(a) do
+    burger.Parent = Plr.Character
+end
+Plr.Character.HumanoidRootPart.CFrame = lastPos
+            end)
+    
+    Section:NewButton("Burger Vest", "Burger Vest", function()
+                local Plr = game.Players.LocalPlayer
+local e = 0
+local p = 0
+local burgercount = 3
+local a = {}
+local radian = math.pi/burgercount
+repeat
+    Plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Hamburger] - $5"].Head.CFrame
+    wait(0.5)
+    fireclickdetector(game:GetService("Workspace").Ignored.Shop["[Hamburger] - $5"].ClickDetector)
+    for i, v in pairs(Plr.Backpack:GetChildren()) do
+        if v.Name == "[Hamburger]" then
+            e = 0
+            for i, v in pairs(a) do
+                e = e + 1
+            end
+            table.insert(a, v)
+            v.Parent = Plr.Character
+        end
+    end
+until e >= burgercount*9
+spawn(function()
+    while wait() do
+        e = e + 0.01
+        if e >= 1 then
+            e = -1
+        end
+    end
+end)
+for i, v in pairs(a) do
+    spawn(function()
+        while wait() do
+            p = 2*(e*math.pi-(radian*i))
+            if i <=math.floor(1*burgercount) then
+                v.GripPos = Vector3.new(math.sin(p)*5, 0, math.cos(p)*5)
+            elseif i <=2*burgercount then
+                v.GripPos = Vector3.new(math.sin(p)*5, math.cos(p)*5, 0)
+            elseif i <=3*burgercount then
+                v.GripPos = Vector3.new(0, math.cos(p)*5, math.sin(p)*5)
+            elseif i <=4*burgercount then
+                v.GripPos = Vector3.new(math.cos(p)*5, math.sin(p)*5, math.cos(p)*5)
+            elseif i <=5*burgercount then
+                v.GripPos = Vector3.new(math.cos(p)*5, math.sin(p)*5, -math.cos(p)*5)
+            elseif i <=6*burgercount then
+                v.GripPos = Vector3.new(math.sin(p)*5, math.cos(p)*5, math.cos(p)*5)
+            elseif i <=7*burgercount then
+                v.GripPos = Vector3.new(math.sin(p)*5, math.cos(p)*5, -math.cos(p)*5)
+            elseif i <=8*burgercount then
+                v.GripPos = Vector3.new(math.cos(p)*5, math.cos(p)*5, math.sin(p)*5)
+            elseif i <=9*burgercount then
+                v.GripPos = Vector3.new(math.cos(p)*5, math.cos(p)*5, math.sin(p)*5)
+            end
+        end
+    end)
+end
+Plr.Character.Humanoid:UnequipTools()
+wait(5)
+for _, burger in pairs(a) do
+    burger.Parent = Plr.Character
+end
+                
+    end)
+            
+            Section:NewButton("Bomb Vest", "Bomb Vest", function()
+                local Plr = game.Players.LocalPlayer
+local i = 1
+local Mouse = Plr:GetMouse()
+
+game.Workspace.Ignored.ChildAdded:connect(function(child)
+    if child.Name == "Handle" then
+        child.CanCollide = false
+        local move = Instance.new("BodyPosition", child)
+        move.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+        move.P = 1e5
+        i = i + 1
+        if i>=20 then
+            i=1
+        end
+        local b = i 
+        local c = true
+        spawn(function()
+            wait(1.5)
+            c = false
+        end)
+        while c do
+            game.RunService.Stepped:wait()
+            move.Position = (Plr.Character.UpperTorso.CFrame*CFrame.new(-0.6+(0.3*math.floor((b%10)/3)), -0.75+(0.5*(b%3)), -0.8+(1.6*math.floor(b/10)))).p + (Plr.Character.UpperTorso.Velocity*0.04)
+            setsimulationradius(math.huge^math.huge, math.huge)
+        end
+        move.P = 1e4
+        move.Position = Plr.Character.UpperTorso.CFrame.p+(((Plr.Character.UpperTorso.CFrame*CFrame.new(-0.6+(0.3*math.floor((b%10)/3)), -0.75+(0.5*(b%3)), -0.8+(1.6*math.floor(b/10)))).p - Plr.Character.UpperTorso.CFrame.p)*20)
+        child.CanCollide = true
+    end
+end)
+while true do
+    repeat until Mouse.KeyDown:wait():lower() == "v"
+    local a = {}
+    local lastpos = Plr.Character.HumanoidRootPart.CFrame
+    repeat
+        Plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Grenade] - $700"].Head.CFrame
+        wait(1)
+        fireclickdetector(game:GetService("Workspace").Ignored.Shop["[Grenade] - $700"].ClickDetector)
+        for i, v in pairs(Plr.Backpack:GetChildren()) do
+            if v.Name == "[Grenade]" then
+                table.insert(a, v)
+                v.Parent = Plr.Character
+            end
+        end
+    until #a >= 20
+    Plr.Character.HumanoidRootPart.CFrame = lastpos
+    repeat until Mouse.KeyDown:wait():lower() == "v"
+    for i, v in pairs(a) do
+        game.RunService.Stepped:wait()
+        spawn(function()
+            if v.Name == "[Grenade]" then
+                v:Activate(); wait(0.01); v:Deactivate(); wait(0.01); v:Activate()
+            end
+        end)
+    end
+end
+                
+                end)
+    
+        
+        
 
         local Tab = Window:NewTab("Cash")
 
         local Section = Tab:NewSection("Cash")
+
+Section:NewButton("Cash ESP", "Cash ESP", function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/zvzi/saquadogui/main/src/MoneyEsp.lua'))()
+                
+                end)
 
         Section:NewSlider("Cash Amount", "Cash Amount", 10000, 100, function(v)
             getgenv().Values.cashamount = v
@@ -6373,7 +6833,7 @@ end));
             
             end)
 
-            Section:NewButton("Cash Stealer", "Csh Stealer", function()
+            Section:NewButton("Cash Stealer", "Cash Stealer", function()
                 loadstring(game:HttpGet('https://raw.githubusercontent.com/D34THEV1L/DaHood-Source/main/DaHoodMoneyStealer'))()
                 
                 end)
