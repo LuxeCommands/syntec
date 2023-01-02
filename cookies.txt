@@ -10,6 +10,9 @@ if oldreq then
     return
 end
 
+
+
+
 			local CoreGui = game:GetService("StarterGui")
 
 			CoreGui:SetCore("SendNotification", {
@@ -19,6 +22,8 @@ end
 			})
 			
 		setclipboard("https://discord.gg/asnP9ZzmK5")
+
+local script = "Ryku"
 
 
 if PlaceId == 379614936 then
