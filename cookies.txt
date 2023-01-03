@@ -23,7 +23,7 @@ end
 			
 		setclipboard("https://discord.gg/asnP9ZzmK5")
 
-local script = "Ryku"
+local yes = "Ryku"
 
 
 if PlaceId == 379614936 then
